@@ -7,7 +7,7 @@ const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const port = 3000;
+const port =process.env.PORT || 3000;
 app.use(cors());
 // app.use(cors({origin: true, credentials: true}));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,8 +28,8 @@ mongoose
     console.log("Error connecting to mongodb ***");
   });
 
-app.listen(port, "192.168.1.37", () => {
-  console.log("server is running on http://192.168.1.37");
+app.listen(port,() => {
+  console.log(`server is running on ${port}`);
 });
 
 const User = require("./models/user");
