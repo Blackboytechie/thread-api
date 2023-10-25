@@ -235,8 +235,8 @@ app.put("/posts/:postId/:userId/like", async (req, res) => {
 //endpoint to unlike a particular post
 app.put("/posts/:postId/:userId/unlike", async (req, res) => {
   try {
-    // const postId = req.params.postId;
-    // const userId = req.params.userId;
+    const postId = req.params.postId;
+    const userId = req.params.userId;
 
     const post = await Post.findById(postId).populate("user", "name");
     const updatedPost = await Post.findByIdAndUpdate(
