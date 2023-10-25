@@ -72,7 +72,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
     from: "threads.com",
     to: email,
     subject: "Email Verification",
-    text: `please click the following link to verify your email http://192.168.1.37:3000/verify/${verificationToken}`,
+    text: `please click the following link to verify your email https://thread-api-m72a.onrender.com/verify/${verificationToken}`,
   };
   try {
     await transporter.sendMail(mailOptions);
