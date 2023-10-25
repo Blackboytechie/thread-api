@@ -36,6 +36,13 @@ const User = require("./models/user");
 const Post = require("./models/post");
 const { log } = require("console");
 
+app.get('/',async(req,res)=>{
+  try{
+    console.log('hi dharik,server working');
+  }catch(err){
+    console.log('error :',err);
+  };
+})
 app.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
