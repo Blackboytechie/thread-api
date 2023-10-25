@@ -38,6 +38,7 @@ const { log } = require("console");
 
 app.get('/',async(req,res)=>{
   try{
+    res.status(200).json({message:'welcome dharik how its going'});
     console.log('hi dharik,server working');
   }catch(err){
     console.log('error :',err);
